@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Minha API
+
+Este pequeno projeto faz parte do material diático da Disciplina **Arquitetura de Software** e foi feito por Vagner Morais.
+
+O objetivo aqui é desenvolver uma ferramenta que supra as necessidades de pessoas que jogam futebol amador e precisam gerenciar datas de jogos, participantes, pagamentos, etc.
+
+---
+
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+- **Backend:** Flask
+- **Frontend:** NextJS, React
+- **Banco de Dados:** sqlite3
+- **Infraestrutura:** Docker, Docker Compose
+
+
+## Arquitetura da Aplicação
+
+A arquitetura desta aplicação foi definida e organizada como na imagem abaixo:
+
+![Fluxograma da Arquitetura da Aplicação](./src/assets/Arquitetura.png)
+
+---
+
+## Como executar sem o Docker
+
+### Backend
+
+
+Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
+Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo.
+
+> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
+
+```
+(env)$ pip install -r requirements.txt
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este comando instala as dependências/bibliotecas, descritas no arquivo `requirements.txt`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para executar a API  basta executar:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+(env)$ flask run --host 0.0.0.0 --port 5000
+```
 
-## Learn More
+Em modo de desenvolvimento é recomendado executar utilizando o parâmetro reload, que reiniciará o servidor
+automaticamente após uma mudança no código fonte. 
 
-To learn more about Next.js, take a look at the following resources:
+```
+(env)$ flask run --host 0.0.0.0 --port 5000 --reload
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Abra a API em  [http://localhost:5000/#/](http://localhost:5000/#/) no navegador para verificar o status da API em execução.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Frontend
+cd golzinho_frontend
+npm install
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O Frontend rodará  em http://localhost:3000.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Como executar com o Docker
+- Baixe o Docker
+- Clone o repositório do backend em https://github.com/vaguinho707/backend_arquiteturadesoftware
+- Clone o repositório do backend em https://github.com/vaguinho707/backend_arquiteturadesoftware
+
+### Backend
+- docker compose up --build
+O Backend rodará  em http://localhost:5000/#/.
+
+
+### Frontend
+- cd golzinho_api
+- Baixe o Docker
+- docker compose up --build
+O Frontend rodará  em http://localhost:3000.
