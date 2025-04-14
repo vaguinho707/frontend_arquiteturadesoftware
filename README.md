@@ -16,6 +16,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - **Frontend:** NextJS, React
 - **Banco de Dados:** sqlite3
 - **Infraestrutura:** Docker, Docker Compose
+- **API Externa:** ViaCEP
 
 
 ## Arquitetura da Aplicação
@@ -26,6 +27,11 @@ A arquitetura desta aplicação foi definida e organizada como na imagem abaixo:
 
 ---
 
+## ViaCEP
+- Webservice gratuito para consulta de Código de Endereçamento Postal (CEP) do Brasil.
+- Endpoint utilizado: URL: viacep.com.br/ws/01001000/json, onde o numero 01001000 é referente ao CEP que se deseja consultar. 
+
+---
 ## Como executar sem o Docker
 
 ### Backend
@@ -81,3 +87,5 @@ O Backend rodará  em http://localhost:5000/#/.
 - Baixe o Docker
 - docker compose up --build
 O Frontend rodará  em http://localhost:3000.
+
+
